@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Math Kids - Fun Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', Arial, sans-serif;
+      background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+      color: #222;
+    }
+    header {
+      background: #ffb347;
+      color: #fff;
+      text-align: center;
+      padding: 30px 0 10px 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 2px 12px #ffb34744;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      background: #fffbe6;
+      padding: 12px 0;
+      border-bottom: 2px solid #ffb34733;
+    }
+    nav button {
+      background: #ffb347;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    nav button.active, nav button:hover {
+      background: #ff6f61;
+    }
+    main {
+      max-width: 900px;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+    .section {
+      display: none;
+      animation: fadeIn 0.7s;
+    }
+    .section.active {
+      display: block;
+    }
+    .courses {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .course-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #ffb34733;
+      padding: 22px 18px;
+      max-width: 240px;
+      flex: 1 1 180px;
+      text-align: center;
+      color: #222;
+      border: 2px solid #ffb34722;
+    }
+    .course-card h3 {
+      color: #ff6f61;
+      margin-bottom: 10px;
+    }
+    .features {
+      margin: 14px 0 0 0;
+      padding: 0;
+      list-style: none;
+      color: #ffb347;
+      font-size: 1em;
+    }
+    .features li {
+      margin-bottom: 7px;
+      padding-left: 18px;
+      position: relative;
+    }
+    .features li:before {
+      content: "🎈";
+      position: absolute;
+      left: 0;
+    }
+    .quiz-area, .game-area {
+      background: #fffbe6;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #ffb34733;
+      padding: 22px 18px;
+      margin: 32px auto;
+      max-width: 400px;
+      text-align: center;
+    }
+    .quiz-area h3, .game-area h3 {
+      color: #ff6f61;
+      margin-bottom: 12px;
+    }
+    .quiz-area button, .game-area button {
+      background: #ffb347;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .quiz-area input[type="number"] {
+      padding: 6px;
+      border-radius: 6px;
+      border: 1px solid #ffb347;
+      font-size: 1em;
+      width: 60px;
+      margin-right: 8px;
+    }
+    .about {
+      background: #fffbe6;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #ffb34733;
+      padding: 22px 18px;
+      margin: 32px auto;
+      max-width: 600px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 18px 0;
+      background: #ffb347;
+      color: #fff;
+      margin-top: 40px;
+      border-top-left-radius: 24px;
+      border-top-right-radius: 24px;
+      font-size: 1.1em;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Math Kids
+    <div style="font-size:0.6em; margin-top:6px;">Fun Math Courses & Games for Kids</div>
+  </header>
+  <nav>
+    <button id="nav-courses" class="active" onclick="showSection('courses')">Courses</button>
+    <button id="nav-quiz" onclick="showSection('quiz')">Quiz</button>
+    <button id="nav-games" onclick="showSection('games')">Games</button>
+    <button id="nav-about" onclick="showSection('about')">About</button>
+  </nav>
+  <main>
+    <!-- Courses Section -->
+    <section id="courses" class="section active">
+      <h2 style="color:#ff6f61;text-align:center;">Math Courses</h2>
+      <div class="courses">
+        <div class="course-card">
+          <h3>Addition</h3>
+          <p>Learn to add numbers with fun lessons and practice!</p>
+          <ul class="features">
+            <li>Step-by-step guides</li>
+            <li>Practice games</li>
+            <li>Colorful worksheets</li>
+          </ul>
+        </div>
+        <div class="course-card">
+          <h3>Subtraction</h3>
+          <p>Master subtraction with easy examples and activities.</p>
+          <ul class="features">
+            <li>Visual lessons</li>
+            <li>Interactive quizzes</li>
+            <li>Story problems</li>
+          </ul>
+        </div>
+        <div class="course-card">
+          <h3>Multiplication</h3>
+          <p>Discover multiplication tricks and tables.</p>
+          <ul class="features">
+            <li>Times tables</li>
+            <li>Memory games</li>
+            <li>Speed challenges</li>
+          </ul>
+        </div>
+        <div class="course-card">
+          <h3>Division</h3>
+          <p>Understand division with simple steps and fun puzzles.</p>
+          <ul class="features">
+            <li>Step-by-step guides</li>
+            <li>Practice quizzes</li>
+            <li>Puzzle games</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Quiz Section -->
+    <section id="quiz" class="section">
+      <div class="quiz-area">
+        <h3>Quick Math Quiz</h3>
+        <div id="quiz-question"></div>
+        <input type="number" id="quiz-answer" placeholder="Your answer">
+        <button onclick="checkQuiz()">Submit</button>
+        <div id="quiz-result" style="margin-top:10px;font-weight:bold;"></div>
+      </div>
+    </section>
+    <!-- Games Section -->
+    <section id="games" class="section">
+      <div class="game-area">
+        <h3>Math Match Game</h3>
+        <p>Match numbers with their answers!</p>
+        <button onclick="startMatchGame()">Start Game</button>
+        <div id="game-board" style="margin-top:18px;"></div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="about">
+        <h2 style="color:#ff6f61;">About Math Kids</h2>
+        <p>
+          Math Kids is a fun and interactive app designed to help children learn math through engaging courses, quizzes, and games. Created by Doreen, this app makes learning math easy and enjoyable for kids of all ages!
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Math Kids by Doreen. All rights reserved.
+  </footer>
+  <script>
+    // Section navigation
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('nav-' + id).classList.add('active');
+      if(id === 'quiz') loadQuiz();
+    }
+    // Quiz logic
+    const quizQuestions = [
+      { q: "What is 2 + 7?", a: 9 },
+      { q: "What is 10 - 3?", a: 7 },
+      { q: "What is 4 x 3?", a: 12 },
+      { q: "What is 15 ÷ 5?", a: 3 },
+      { q: "What is 8 + 6?", a: 14 },
+      { q: "What is 6 x 2?", a: 12 },
+      { q: "What is 9 - 4?", a: 5 },
+      { q: "What is 3 x 5?", a: 15 },
+      { q: "What is 12 ÷ 4?", a: 3 },
+      { q: "What is 7 + 2?", a: 9 },
+      { q: "What is 5 - 1?", a: 4 },
+      { q: "What is 3 + 6?", a: 9 },
+      { q: "What is 8 - 2?", a: 6 },
+      { q: "What is 4 x 2?", a: 8 },
+      { q: "What is 10 ÷ 2?", a: 5 }
+    ];
+    let currentQuiz = 0;
+    function loadQuiz() {
+      document.getElementById('quiz-result').textContent = '';
+      document.getElementById('quiz-answer').value = '';
+      const q = quizQuestions[currentQuiz];
+      document.getElementById('quiz-question').textContent = q.q;
+    }
+    function checkQuiz() {
+      const answer = parseInt(document.getElementById('quiz-answer').value, 10);
+      const result = document.getElementById('quiz-result');
+      if (answer === quizQuestions[currentQuiz].a) {
+        result.textContent = "🎉 Correct!";
+        result.style.color = "#ffb347";
+        currentQuiz = (currentQuiz + 1) % quizQuestions.length;
+        setTimeout(loadQuiz, 1200);
+      } else {
+        result.textContent = "Try again!";
+        result.style.color = "#ff6f61";
+      }
+    }
+    // Load first quiz question when quiz section is shown
+    if(document.getElementById('nav-quiz')) {
+      document.getElementById('nav-quiz').addEventListener('click', loadQuiz);
+    }
+    // Simple Math Match Game Logic
+    function startMatchGame() {
+      const board = document.getElementById('game-board');
+      board.innerHTML = '';
+      // Example pairs: [number, answer]
+      const pairs = [
+        [2, 1+1], [6, 2*3], [9, 3*3], [8, 4+4], [12, 6*2], [15, 5*3],
+        [7, 3+4], [1+1, 2], [2*3, 6], [3*3, 9], [4+4, 8], [6*2, 12],
+        [5*3, 15], [3+4, 7]
+      ];
+      let cards = pairs.flat();
+      cards = cards.map((v, i) => ({ value: v, id: i }));
+      cards = cards.sort(() => Math.random() - 0.5);
+      let selected = [];
+      let matched = [];
+      cards.forEach((card, idx) => {
+        const btn = document.createElement('button');
+        btn.textContent = "?";
+        btn.style.width = "60px";
+        btn.style.height = "60px";
+        btn.style.margin = "6px";
+        btn.style.fontSize = "1.3em";
+        btn.style.background = "#fbc2eb";
+        btn.style.borderRadius = "8px";
+        btn.onclick = function() {
+          if (matched.includes(card.id) || selected.length === 2 || selected.includes(card.id)) return;
+          btn.textContent = card.value;
+          selected.push(idx);
+          if (selected.length === 2) {
+            const v1 = cards[selected[0]].value;
+            const v2 = cards[selected[1]].value;
+            if ((v1 === 1+1 && v2 === 2) || (v1 === 2 && v2 === 1+1) ||
+                (v1 === 2*3 && v2 === 6) || (v1 === 6 && v2 === 2*3) ||
+                (v1 === 3*3 && v2 === 9) || (v1 === 9 && v2 === 3*3) ||
+                (v1 === 4+4 && v2 === 8) || (v1 === 8 && v2 === 4+4) ||
+                (v1 === 6*2 && v2 === 12) || (v1 === 12 && v2 === 6*2) ||
+                (v1 === 5*3 && v2 === 15) || (v1 === 15 && v2 === 5*3) ||
+                (v1 === 3+4 && v2 === 7) || (v1 === 7 && v2 === 3+4)) {
+              matched.push(cards[selected[0]].id, cards[selected[1]].id);
+              setTimeout(() => {
+                board.querySelectorAll('button')[selected[0]].style.background = "#ffb347";
+                board.querySelectorAll('button')[selected[1]].style.background = "#ffb347";
+                selected = [];
+              }, 600);
+            } else {
+              setTimeout(() => {
+                board.querySelectorAll('button')[selected[0]].textContent = "?";
+                board.querySelectorAll('button')[selected[1]].textContent = "?";
+                selected = [];
+              }, 800);
+            }
+          }
+        };
+        board.appendChild(btn);
+      });
+    }
+  </script>
+</body>
+</html>
